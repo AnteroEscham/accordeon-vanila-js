@@ -1,0 +1,69 @@
+.accordeon__link {
+  display: block;
+  padding: rem(10px);
+  background-color: $l-grey;
+  border-radius: 20px;
+  text-decoration: none;
+  color: $grey;
+  font-weight: bold;
+  position: relative;
+  transition: 0.2s;
+  &:hover {
+    background-color: $grey;
+    color: $l-grey;
+  }
+  &:after {
+    content: '';
+    display: inline-block;
+    width: 0px;
+    height: 0px;
+    border: 5px solid $orange;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    border-top-width: 10px;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+.accordeon__item {
+  margin-bottom: 3px;
+  background-color: $l-grey;
+  border-radius: 20px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &--active .accordeon__link {
+    background-color: $orange;
+    color: #fff;
+    &:after {
+      border-bottom-color: #fff;
+      border-top-width: 5px;
+      border-bottom-width: 10px;
+
+    }
+  }
+  &--active .accordeon__content {
+    padding: 15px 10px;
+    visibility: initial;
+    max-height: 90px;
+    transition: max-height 1s ease-in-out;
+    transition: 0.5s;
+  }
+}
+.accordeon__logo {
+  margin-bottom: 10px;
+}
+
+.accordeon__content {
+  color: #4f4f4f;
+  max-height: 0;
+  transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+  overflow: hidden;
+  visibility: hidden;
+  transition: 0.5s;
+
+}

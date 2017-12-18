@@ -1,0 +1,17 @@
+.wrapper {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.accordeon {
+  align-self: center;
+  width: rem(460px);
+  text-align: center;
+}
+
+.accordeon__list {
+  text-align: left;
+}
